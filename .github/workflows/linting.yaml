@@ -1,4 +1,4 @@
-name: Automated Tests
+name: Linting
 
 on: pull_request
 
@@ -7,8 +7,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  vitest:
-    name: Vitest
+  biome:
+    name: Biome
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,8 +28,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run tests
-        run: pnpm test
-
-      - name: Build application
-        run: pnpm build
+      - name: Run linter
+        run: pnpm lint:ci
