@@ -7,9 +7,6 @@ jobs:
     name: Vitest Ubuntu
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ["lts/iron"]
 
     steps:
       - uses: actions/checkout@v4
@@ -20,10 +17,10 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js "lts/iron"
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "lts/iron"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
