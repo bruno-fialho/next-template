@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "biomejs.biome-vscode",
+    "bradlc.vscode-tailwindcss",
+    "vitest.explorer"
+  ]
+}
